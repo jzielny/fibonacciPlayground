@@ -27,16 +27,20 @@ class FibbonaciSequenceGenerator
       puts "Fibonacci cap given was negative or not valid"
     end
   end
+  
   def filter_out_odd_numbers
       return @sequence.select{ |x| x.modulo(2) == 0}
   end
 
 end
 
+def test
+
 
 
 if __FILE__ == $0
   #Generates Sequence
+  ruby FibonacciPlayground.rb 4000000 
   puts "sequence is being generated up to " +ARGV[0]
   sequenceGen = FibbonaciSequenceGenerator.new(ARGV[0].to_i)
   puts "Sequence generated is: " + sequenceGen.sequence.join(", ")
